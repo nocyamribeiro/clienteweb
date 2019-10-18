@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        
+	<title>Publicação</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<!--===============================================================================================-->
+
+    </h:head>
+    <h:body>
+        <h:form id="formularioPrincipal">
+            
+            <div class="limiter">
+               
+		<div class="container-table100">
+                                   
+                   
+                
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							
+                                                    <div class="cell" >
+                                                        Código
+                                                        <h:inputText value="#{publicacaoMB.codigo}" style="width: 50px;"/> 
+                                                    </div>
+                                                    <div class="cell" >
+                                                        Título
+                                                        <h:inputText value="#{publicacaoMB.titulo}" style="width: 100px;"/>
+                                                    </div>
+                                                    
+                                                    <div class="cell">
+                                                        Descrição
+                                                    </div>
+                                                    
+                                                    <div class="cell">
+                                                        Página Inicial
+                                                        <h:inputText value="#{publicacaoMB.paginaInicial}" style="width: 50px"/>  
+                                                    </div>
+                                                    
+                                                    <div class="cell">
+                                                        Página Final
+                                                        <h:inputText value="#{publicacaoMB.paginaFinal}" style="width: 50px"/>   
+                                                    </div>
+                                                        
+                                                    <div class="cell">
+                                                        Ano de Publicação
+                                                        <h:inputText value="#{publicacaoMB.anoPublicacao}" style="width: 50px;"/> 
+                                                    </div>
+                                                    
+                                                    <div class="cell">
+                                                        <h:commandButton value="Pesquisar" actionListener="#{publicacaoMB.pesquisar()}" />
+                                                    </div> 
+                
+							
+						</div>
+                                                <ui:repeat value="#{publicacaoMB.publicacoes}" var="p">
+                                                    <div class="row">
+                                                        <div class="cell" data-title="Código" >
+                                                            <h:outputText value="#{p.id}"/>
+                                                        </div>
+                                                        
+                                                        <div class="cell" data-title="Título">
+                                                            <h:outputText value="#{p.titulo}"/>
+                                                        </div>
+                                                        
+                                                        <div class="cell" data-title="Descrição">
+                                                            <h:outputText value="#{p.descricao}"/>
+                                                        </div>
+                                                        
+							
+                                                        
+                                                        <div class="cell" data-title="Página Inicial">
+                                                            <h:outputText value="#{p.paginaInicial}"/>
+                                                        </div>
+                                                        
+                                                        <div class="cell" data-title="Página Final">
+                                                            <h:outputText value="#{p.paginaFinal}"/>
+                                                        </div>
+                                                        
+                                                        <div class="cell" data-title="Ano de Publicação">
+                                                            <h:outputText value="#{p.anoPublicacao}"/>
+                                                        </div>
+                                                        
+                                                        <div class="cell" data-title="">
+                                                             <h:outputText value="  "/>
+                                                        </div>
+
+                                                    </div>
+                
+                                                </ui:repeat>
+						
+
+					</div>
+			</div>
+		</div>
+                
+	</div>
+            
+        </h:form>
+    </h:body>
+</html>
+
